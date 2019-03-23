@@ -1,18 +1,16 @@
 package com.fullteaching.backend;
 
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3Client;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 
-import com.fullteaching.backend.security.AuthorizationService;
-
 //ONLY ON PRODUCTION
-import org.springframework.beans.factory.annotation.Value;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.AmazonS3Client;
 //ONLY ON PRODUCTION 
 
 @SpringBootApplication
@@ -29,6 +27,7 @@ public class Application
 //		return new AuthorizationService();
 //	}
 //
+    
     //ONLY ON PRODUCTION
     @Value("${aws.access.key.id}")
     private String awsId;
