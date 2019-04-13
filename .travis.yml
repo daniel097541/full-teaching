@@ -1,0 +1,10 @@
+language: java
+script:
+  - mvn clean install
+deploy:
+  provider: releases
+  api-key: "$GITHUB_OATH_TOKEN"
+  skip_cleanup: true
+  on:
+    tags: true
+all_branches: true
