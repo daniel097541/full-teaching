@@ -20,7 +20,7 @@
 		<tika.version>1.19.1</tika.version>
 		<selenium.version>3.141.59</selenium.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.11</java.version>
+		<java.version>11</java.version>
 
 		<!-- Test dependencies version -->
 		<junit.jupiter.version>5.0.0</junit.jupiter.version>
@@ -40,6 +40,9 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>1.6.0</version>
+				<configuration>
+					<workingDirectory>src/main/web/</workingDirectory>
+				</configuration>
 				<executions>
 					<execution>
 						<id>install npm</id>
@@ -56,7 +59,7 @@
 						</goals>
 					</execution>
 					<execution>
-						<id>build js</id>
+						<id>build angular</id>
 						<configuration>
 							<workingDirectory>${project.basedir}/src/main/angular</workingDirectory>
 							<executable>ng</executable>
